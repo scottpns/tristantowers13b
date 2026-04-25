@@ -1332,10 +1332,10 @@ function toggleMenu() {
 
 // ── Hero slideshow
 let currentSlide = 0;
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.dot');
+let slides, dots;
 
 function goSlide(n) {
+  if (!slides || slides.length === 0) return;
   slides[currentSlide].classList.remove('active');
   dots[currentSlide].classList.remove('active');
   currentSlide = ((n % slides.length) + slides.length) % slides.length;
@@ -1343,7 +1343,11 @@ function goSlide(n) {
   dots[currentSlide].classList.add('active');
 }
 
-setInterval(() => goSlide(currentSlide + 1), 6000);
+document.addEventListener('DOMContentLoaded', function() {
+  slides = document.querySelectorAll('.hero-slide');
+  dots = document.querySelectorAll('.dot');
+  setInterval(() => goSlide(currentSlide + 1), 6000);
+});
 
 // ── Lightbox
 const lbImages = [
