@@ -890,7 +890,7 @@ footer {
 <section class="hero">
   <div class="hero-slides">
     <div class="hero-slide active" style="background-image:url('https://cdn.liverez.com/5/13556/1/191919/800/3.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('https://cdn.liverez.com/5/13556/1/191919/800/7.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('TN_2.jpg')"></div>
     <div class="hero-slide" style="background-image:url('https://cdn.liverez.com/5/13556/1/191919/800/2.jpg')"></div>
     <div class="hero-slide" style="background-image:url('https://cdn.liverez.com/5/13556/1/191919/800/5.jpg')"></div>
   </div>
@@ -1334,14 +1334,6 @@ function toggleMenu() {
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-slide');
 const dots = document.querySelectorAll('.dot');
-
-function goSlide(n) {
-  slides[currentSlide].classList.remove('active');
-  dots[currentSlide].classList.remove('active');
-  currentSlide = (n + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
-  dots[currentSlide].classList.add('active');
-}
 
 function goSlide(n) {
   slides[currentSlide].classList.remove('active');
